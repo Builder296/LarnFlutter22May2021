@@ -49,35 +49,41 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // left widgt - need help
-                  Row(
-                    children: [
-                      Text(
-                        "ต้องการความช่วยเหลือ",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
-                      ),
-                      Text(
-                        "คลิก",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Image.asset(
-                    "assets/thai-flag.png",
-                    width: 24,
-                  ),
+                  needHelp(),
+                  GestureDetector(
+                    child: Image.asset(
+                      "assets/thai-flag.png",
+                      width: 24,
+                    ),
+                  )
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Row needHelp() {
+    return Row(
+      children: [
+        Text(
+          "ต้องการความช่วยเหลือ",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+          ),
+        ),
+        Text(
+          "คลิก",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
     );
   }
 
