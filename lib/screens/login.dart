@@ -21,7 +21,9 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         width: Get.width,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            // top widget
             Column(
               children: [
                 Container(
@@ -45,18 +47,38 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Text(
-                  "ต้องการความช่วยเหลือ",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 32),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // left widgt - need help
+                  Row(
+                    children: [
+                      Text(
+                        "ต้องการความช่วยเหลือ",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        "คลิก",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            )
+                  Image.asset(
+                    "assets/thai-flag.png",
+                    width: 24,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
