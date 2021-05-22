@@ -16,20 +16,30 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
         backgroundColor: AppColors.red[500],
         body: Container(
-            padding: EdgeInsets.only(
-              top: Get.mediaQuery.padding.top,
-              bottom: Get.mediaQuery.padding.bottom,
+            margin: EdgeInsets.only(
+              top: Get.height * 0.1,
             ),
             width: Get.width,
-            child: Column(
-              children: [
-                Center(
-                    child: Text("KEPT",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 64,
-                            fontWeight: FontWeight.bold)))
-              ],
-            )));
+            child: Column(children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    "Kept",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 64,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "by krungsri",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              )
+            ])));
   }
 }
