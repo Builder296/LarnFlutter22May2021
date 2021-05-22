@@ -173,9 +173,12 @@ class _LoginScreenState extends State<LoginScreen> {
         // await UserService().getUser()
         UserService().getUser().then((user) => {
               Get.to(HomeScreen(
-                fname: "",
-                lname: "",
+                fname: user.fname,
+                lname: user.lname! // should be use with try catch for null value
               )) // click and go to home screen
+            }).catchError((error) {
+              print("getUser: $error");
+              // handle exception
             });
 
         // state management มีหลากหลายตัว

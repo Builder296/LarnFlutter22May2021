@@ -3,14 +3,11 @@ import 'package:get/get.dart';
 import 'package:learn_flutter/cont/color.dart';
 import 'package:learn_flutter/widgets/logo.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  final String fname;
+  final String lname;
+  HomeScreen({Key? key, required this.fname, required this.lname});
 
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: Get.height * 0.1,
               ),
               child: Text(
-                "สวัสดี, คุณ Kessirin Muenwongsa",
+                "สวัสดี, คุณ $fname $lname",
                 style: TextStyle(
                   color: Colors.yellow.shade700,
                   fontSize: 24,
