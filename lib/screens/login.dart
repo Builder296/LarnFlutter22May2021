@@ -76,9 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                     },
                     child: Image.asset(
-                      this.languageSelected == Language.th
-                          ? "assets/thai-flag.png"
-                          : "assets/eng-flag.png",
+                      imagePathLanguage(languageSelected),
                       width: 24,
                     ),
                   )
@@ -91,15 +89,19 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  String imagePathLanguage(Language languageSelected) {
+    return languageSelected == Language.th
+        ? "assets/thai-flag.png"
+        : "assets/eng-flag.png";
+  }
+
   ListTile languageMenu(
       {required Language language,
       required String label,
       required Language languageSelected}) {
     return ListTile(
       leading: Image.asset(
-        language == Language.th
-            ? "assets/thai-flag.png"
-            : "assets/eng-flag.png",
+        imagePathLanguage(language),
         width: 24,
       ),
       title: Text(label),
