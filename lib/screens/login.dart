@@ -127,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Row(
       children: [
         Text(
-          "ต้องการความช่วยเหลือ",
+          "ต้องการความช่วยเหลือ ",
           style: TextStyle(
             color: Colors.white,
             fontSize: 16,
