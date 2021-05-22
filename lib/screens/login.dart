@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_flutter/cont/color.dart';
+import 'package:learn_flutter/screens/home.dart';
 
 enum Language {
   th,
@@ -117,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
           this.languageSelected = language;
         });
         // close dialog after select
-        Get.back(); // porps state out
+        Get.back(); // porps stack out
       },
     );
   }
@@ -166,7 +167,16 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        // state management มีหลากหลายตัว
+        Get.to(HomeScreen()); // click and go to home screen
+        // Navigator.of(context).push(
+        //   // push stack
+        //   MaterialPageRoute(
+        //     builder: (context) => HomeScreen(),
+        //   ),
+        // );
+      },
     );
   }
 
