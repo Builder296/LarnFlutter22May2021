@@ -64,11 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Column(
                           children: [
                             languageMenu(
-                                imagePath: "assets/thai-flag.png",
-                                label: 'ภาษาไทย'),
+                                language: Language.th, label: 'ภาษาไทย'),
                             languageMenu(
-                                imagePath: "assets/eng-flag.png",
-                                label: 'ภาษาอังกฤษ')
+                                language: Language.en, label: 'ภาษาอังกฤษ')
                           ],
                         ),
                       );
@@ -87,10 +85,12 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  ListTile languageMenu({required String imagePath, required String label}) {
+  ListTile languageMenu({required Language language, required String label}) {
     return ListTile(
       leading: Image.asset(
-        imagePath,
+        language == Language.th
+            ? "assets/thai-flag.png"
+            : "assets/eng-flag.png",
         width: 24,
       ),
       title: Text(label),
