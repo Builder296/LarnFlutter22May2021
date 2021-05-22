@@ -33,6 +33,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   logo(),
                 ],
               ),
+            ),
+            ElevatedButton(
+              child: Text(
+                'เข้าใช้งาน',
+                style: TextStyle(
+                    color: AppColors.primary,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                ),
+                backgroundColor:
+                    MaterialStateProperty.all(Colors.yellow.shade700),
+              ),
+              onPressed: () {},
             )
           ],
         ),
