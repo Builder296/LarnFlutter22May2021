@@ -40,35 +40,39 @@ class _LoginScreenState extends State<LoginScreen> {
               margin: EdgeInsets.only(
                 top: Get.height * 0.1,
               ),
-              child: ElevatedButton(
-                child: Text(
-                  'เข้าใช้งาน',
-                  style: TextStyle(
-                      color: AppColors.primary,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
-                ),
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(24),
-                    ),
-                  ),
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.yellow.shade700),
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.symmetric(
-                      vertical: 8,
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-              ),
+              child: loginButton(),
             )
           ],
         ),
       ),
     );
+  }
+
+  ElevatedButton loginButton() {
+    return ElevatedButton(
+              child: Text(
+                'เข้าใช้งาน',
+                style: TextStyle(
+                    color: AppColors.primary,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                ),
+                backgroundColor:
+                    MaterialStateProperty.all(Colors.yellow.shade700),
+                padding: MaterialStateProperty.all(
+                  EdgeInsets.symmetric(
+                    vertical: 8,
+                  ),
+                ),
+              ),
+              onPressed: () {},
+            );
   }
 
   Column logo() {
