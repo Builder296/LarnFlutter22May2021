@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_flutter/cont/color.dart';
 
+enum Language {
+  th,
+  en,
+}
+
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
 
@@ -10,6 +15,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  Language languageSeleted = Language.th;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,36 +63,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         title: "เลือกภาษา",
                         content: Column(
                           children: [
-                            Container(
-                              padding: EdgeInsets.symmetric(horizontal: 16),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.only(right: 32),
-                                    child: Row(
-                                      children: [
-                                        Image.asset(
-                                          "assets/thai-flag.png",
-                                          width: 24,
-                                        ),
-                                        Text("ภาษาไทย"),
-                                      ],
-                                    ),
-                                  ),
-                                  Icon(Icons.check, color: AppColors.red)
-                                ],
-                              ),
-                            ),
-                            ListTile(
-                                leading: Image.asset(
-                                  "assets/eng-flag.png",
-                                  width: 24,
-                                ),
-                                title: Text("ภาษาอังกฤษ"),
-                                trailing:
-                                    Icon(Icons.check, color: AppColors.red))
+                            languageMenu(
+                                imagePath: "assets/thai-flag.png",
+                                label: 'ภาษาไทย'),
+                            languageMenu(
+                                imagePath: "assets/eng-flag.png",
+                                label: 'ภาษาอังกฤษ')
                           ],
                         ),
                       );
@@ -100,6 +83,20 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  ListTile languageMenu({required String imagePath, required String label}) {
+    return ListTile(
+      leading: Image.asset(
+        imagePath,
+        width: 24,
+      ),
+      title: Text(label),
+      trailing: Icon(
+        Icons.check,
+        color: Colors.grey,
       ),
     );
   }
