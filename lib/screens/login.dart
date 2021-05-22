@@ -34,28 +34,33 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-            ElevatedButton(
-              child: Text(
-                'เข้าใช้งาน',
-                style: TextStyle(
-                    color: AppColors.primary,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ),
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
+            Container(
+              width: Get.width * 0.8,
+              height: 44,
+              child: ElevatedButton(
+                child: Text(
+                  'เข้าใช้งาน',
+                  style: TextStyle(
+                      color: AppColors.primary,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                  ),
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.yellow.shade700),
+                  padding: MaterialStateProperty.all(
+                    EdgeInsets.symmetric(
+                      vertical: 8,
+                    ),
                   ),
                 ),
-                backgroundColor:
-                    MaterialStateProperty.all(Colors.yellow.shade700),
-                padding: MaterialStateProperty.all(
-                  EdgeInsets.symmetric(
-                      vertical: 8, horizontal: Get.width * 0.2),
-                ),
+                onPressed: () {},
               ),
-              onPressed: () {},
             )
           ],
         ),
