@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_flutter/cont/color.dart';
 import 'package:learn_flutter/screens/home.dart';
+import 'package:learn_flutter/services/user_service.dart';
 import 'package:learn_flutter/widgets/logo.dart';
 
 enum Language {
@@ -169,8 +170,16 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       onPressed: () {
+        // await UserService().getUser()
+        UserService().getUser().then((user) => {
+              Get.to(HomeScreen(
+                fname: "",
+                lname: "",
+              )) // click and go to home screen
+            });
+
         // state management มีหลากหลายตัว
-        Get.to(HomeScreen()); // click and go to home screen
+        // Get.to(HomeScreen()); // click and go to home screen
         // Navigator.of(context).push(
         //   // push stack
         //   MaterialPageRoute(
