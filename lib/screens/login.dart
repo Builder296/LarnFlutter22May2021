@@ -98,6 +98,13 @@ class _LoginScreenState extends State<LoginScreen> {
         Icons.check,
         color: Colors.grey,
       ) : null,
+      onTap: () {
+        setState(() { // re-render build()
+          this.languageSelected = language;
+        });
+        // close dialog after select
+        Get.back(); // porps state out 
+      },
     );
   }
 
