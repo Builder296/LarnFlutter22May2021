@@ -64,15 +64,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Column(
                           children: [
                             languageMenu(
-                                language: Language.th, label: 'ภาษาไทย', languageSelected: languageSelected),
+                                language: Language.th,
+                                label: 'ภาษาไทย',
+                                languageSelected: languageSelected),
                             languageMenu(
-                                language: Language.en, label: 'ภาษาอังกฤษ', languageSelected: languageSelected)
+                                language: Language.en,
+                                label: 'ภาษาอังกฤษ',
+                                languageSelected: languageSelected)
                           ],
                         ),
                       );
                     },
                     child: Image.asset(
-                      "assets/thai-flag.png",
+                      this.languageSelected == Language.th
+                          ? "assets/thai-flag.png"
+                          : "assets/eng-flag.png",
                       width: 24,
                     ),
                   )
@@ -85,7 +91,10 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  ListTile languageMenu({required Language language, required String label,required Language languageSelected}) {
+  ListTile languageMenu(
+      {required Language language,
+      required String label,
+      required Language languageSelected}) {
     return ListTile(
       leading: Image.asset(
         language == Language.th
@@ -94,16 +103,19 @@ class _LoginScreenState extends State<LoginScreen> {
         width: 24,
       ),
       title: Text(label),
-      trailing: language == languageSelected ? Icon(
-        Icons.check,
-        color: Colors.grey,
-      ) : null,
+      trailing: language == languageSelected
+          ? Icon(
+              Icons.check,
+              color: Colors.grey,
+            )
+          : null,
       onTap: () {
-        setState(() { // re-render build()
+        setState(() {
+          // re-render build()
           this.languageSelected = language;
         });
         // close dialog after select
-        Get.back(); // porps state out 
+        Get.back(); // porps state out
       },
     );
   }
