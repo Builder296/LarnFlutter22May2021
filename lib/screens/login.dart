@@ -56,29 +56,36 @@ class _LoginScreenState extends State<LoginScreen> {
                         title: "เลือกภาษา",
                         content: Column(
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Image.asset(
-                                      "assets/thai-flag.png",
-                                      width: 24,
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 16),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(right: 32),
+                                    child: Row(
+                                      children: [
+                                        Image.asset(
+                                          "assets/thai-flag.png",
+                                          width: 24,
+                                        ),
+                                        Text("ภาษาไทย"),
+                                      ],
                                     ),
-                                    Text("ภาษาไทย"),
-                                  ],
-                                ),
-                                Icon(Icons.check, color: AppColors.red)
-                              ],
+                                  ),
+                                  Icon(Icons.check, color: AppColors.red)
+                                ],
+                              ),
                             ),
                             ListTile(
-                              leading: Image.asset(
-                                "assets/eng-flag.png",
-                                width: 24,
-                              ),
-                              title: Text("ภาษาอังกฤษ"),
-                              trailing: Icon(Icons.check, color: AppColors.red)
-                            )
+                                leading: Image.asset(
+                                  "assets/eng-flag.png",
+                                  width: 24,
+                                ),
+                                title: Text("ภาษาอังกฤษ"),
+                                trailing:
+                                    Icon(Icons.check, color: AppColors.red))
                           ],
                         ),
                       );
