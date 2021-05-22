@@ -71,6 +71,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Icon(Icons.check, color: AppColors.red)
                               ],
                             ),
+                            ListTile(
+                              leading: Image.asset(
+                                "assets/eng-flag.png",
+                                width: 24,
+                              ),
+                              title: Text("ภาษาอังกฤษ"),
+                              trailing: Icon(Icons.check, color: AppColors.red)
+                            )
                           ],
                         ),
                       );
