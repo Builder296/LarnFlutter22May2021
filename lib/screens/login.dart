@@ -50,6 +50,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 backgroundColor:
                     MaterialStateProperty.all(Colors.yellow.shade700),
+                padding: MaterialStateProperty.all(
+                  EdgeInsets.symmetric(
+                      vertical: 8, horizontal: Get.width * 0.2),
+                ),
               ),
               onPressed: () {},
             )
