@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:learn_flutter/cont/color.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -23,24 +22,40 @@ class _LoginScreenState extends State<LoginScreen> {
         width: Get.width,
         child: Column(
           children: [
-            Container(
-              margin: EdgeInsets.only(
-                top: Get.height * 0.1,
-              ),
-              width: Get.width,
-              child: Column(
-                children: [
-                  logo(),
-                ],
-              ),
+            Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                    top: Get.height * 0.1,
+                  ),
+                  width: Get.width,
+                  child: Column(
+                    children: [
+                      logo(),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: Get.width * 0.8,
+                  height: 44,
+                  margin: EdgeInsets.only(
+                    top: Get.height * 0.1,
+                  ),
+                  child: loginButton(),
+                ),
+              ],
             ),
-            Container(
-              width: Get.width * 0.8,
-              height: 44,
-              margin: EdgeInsets.only(
-                top: Get.height * 0.1,
-              ),
-              child: loginButton(),
+            Row(
+              children: [
+                Text(
+                  "ต้องการความช่วยเหลือ",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             )
           ],
         ),
@@ -50,29 +65,28 @@ class _LoginScreenState extends State<LoginScreen> {
 
   ElevatedButton loginButton() {
     return ElevatedButton(
-              child: Text(
-                'เข้าใช้งาน',
-                style: TextStyle(
-                    color: AppColors.primary,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ),
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                ),
-                backgroundColor:
-                    MaterialStateProperty.all(Colors.yellow.shade700),
-                padding: MaterialStateProperty.all(
-                  EdgeInsets.symmetric(
-                    vertical: 8,
-                  ),
-                ),
-              ),
-              onPressed: () {},
-            );
+      child: Text(
+        'เข้าใช้งาน',
+        style: TextStyle(
+            color: AppColors.primary,
+            fontSize: 18,
+            fontWeight: FontWeight.bold),
+      ),
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+        ),
+        backgroundColor: MaterialStateProperty.all(Colors.yellow.shade700),
+        padding: MaterialStateProperty.all(
+          EdgeInsets.symmetric(
+            vertical: 8,
+          ),
+        ),
+      ),
+      onPressed: () {},
+    );
   }
 
   Column logo() {
