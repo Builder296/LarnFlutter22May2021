@@ -37,6 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               width: Get.width * 0.8,
               height: 44,
+              margin: EdgeInsets.only(
+                top: Get.height * 0.1,
+              ),
               child: ElevatedButton(
                 child: Text(
                   'เข้าใช้งาน',
