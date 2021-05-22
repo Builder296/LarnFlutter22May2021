@@ -51,6 +51,27 @@ class _LoginScreenState extends State<LoginScreen> {
                   // left widgt - need help
                   needHelp(),
                   GestureDetector(
+                    onTap: () {
+                      Get.defaultDialog(
+                          title: "เลือกภาษา",
+                          content: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    "assets/thai-flag.png",
+                                    width: 24,
+                                  ),
+                                  Text("ภาษาไทย"),
+                                  Icon(
+                                    Icons.check,
+                                    color: AppColors.red
+                                  )
+                                ],
+                              ),
+                            ],
+                          ));
+                    },
                     child: Image.asset(
                       "assets/thai-flag.png",
                       width: 24,
