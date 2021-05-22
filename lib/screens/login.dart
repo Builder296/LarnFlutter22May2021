@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_flutter/cont/color.dart';
 import 'package:learn_flutter/screens/home.dart';
+import 'package:learn_flutter/widgets/logo.dart';
 
 enum Language {
   th,
@@ -39,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     top: Get.height * 0.1,
                   ),
                   width: Get.width,
-                  child: logo(),
+                  child: Logo(),
                 ),
                 Container(
                   width: Get.width * 0.8,
@@ -177,32 +178,6 @@ class _LoginScreenState extends State<LoginScreen> {
         //   ),
         // );
       },
-    );
-  }
-
-  Widget logo() {
-    return Column(
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(
-              "Kept",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 64,
-                  fontWeight: FontWeight.bold),
-            ),
-            Text(
-              "by krungsri",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
-      ],
     );
   }
 }
