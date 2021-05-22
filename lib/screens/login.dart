@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learn_flutter/cont/color.dart';
+import 'package:learn_flutter/models/user_models.dart';
 import 'package:learn_flutter/screens/home.dart';
 import 'package:learn_flutter/services/user_service.dart';
 import 'package:learn_flutter/widgets/logo.dart';
@@ -169,17 +170,27 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-      onPressed: () {
+      onPressed: () async {
         // await UserService().getUser()
-        UserService().getUser().then((user) => {
-              Get.to(HomeScreen(
-                fname: user.fname,
-                lname: user.lname! // should be use with try catch for null value
-              )) // click and go to home screen
-            }).catchError((error) {
-              print("getUser: $error");
-              // handle exception
-            });
+        try {
+          UserModel user = await UserService().getUser();
+          Get.to(HomeScreen(
+              fname: user.fname,
+              lname: user.lname! // should be use with try catch for null value
+              ));
+        } catch (e) {
+          print("getUser: $e");
+        }
+
+        // UserService().getUser().then((user) => {
+        //       Get.to(HomeScreen(
+        //         fname: user.fname,
+        //         lname: user.lname! // should be use with try catch for null value
+        //       )) // click and go to home screen
+        //     }).catchError((error) {
+        //       print("getUser: $error");
+        //       // handle exception
+        //     });
 
         // state management มีหลากหลายตัว
         // Get.to(HomeScreen()); // click and go to home screen
