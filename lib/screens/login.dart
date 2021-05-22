@@ -16,6 +16,10 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
         backgroundColor: AppColors.red[500],
         body: Container(
+            padding: EdgeInsets.only(
+              top: Get.mediaQuery.padding.top,
+              bottom: Get.mediaQuery.padding.bottom,
+            ),
             width: Get.width,
             child: Column(
               children: [
