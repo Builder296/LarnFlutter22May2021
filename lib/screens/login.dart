@@ -180,7 +180,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Column logo() {
+  Widget logo() {
     return Column(
       children: [
         Column(
