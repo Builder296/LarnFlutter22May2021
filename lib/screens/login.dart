@@ -15,7 +15,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  Language languageSeleted = Language.th;
+  Language languageSelected = Language.th;
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Column(
                           children: [
                             languageMenu(
-                                language: Language.th, label: 'ภาษาไทย'),
+                                language: Language.th, label: 'ภาษาไทย', languageSelected: languageSelected),
                             languageMenu(
-                                language: Language.en, label: 'ภาษาอังกฤษ')
+                                language: Language.en, label: 'ภาษาอังกฤษ', languageSelected: languageSelected)
                           ],
                         ),
                       );
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  ListTile languageMenu({required Language language, required String label}) {
+  ListTile languageMenu({required Language language, required String label,required Language languageSelected}) {
     return ListTile(
       leading: Image.asset(
         language == Language.th
@@ -94,10 +94,10 @@ class _LoginScreenState extends State<LoginScreen> {
         width: 24,
       ),
       title: Text(label),
-      trailing: Icon(
+      trailing: language == languageSelected ? Icon(
         Icons.check,
         color: Colors.grey,
-      ),
+      ) : null,
     );
   }
 
