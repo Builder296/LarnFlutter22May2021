@@ -14,15 +14,17 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.red[500],
-        body: Container(
-            margin: EdgeInsets.only(
-              top: Get.height * 0.1,
-            ),
-            width: Get.width,
-            child: Column(
-              children: [logo()],
-            )));
+      backgroundColor: AppColors.red[500],
+      body: Container(
+        margin: EdgeInsets.only(
+          top: Get.height * 0.1,
+        ),
+        width: Get.width,
+        child: Column(
+          children: [logo()],
+        ),
+      ),
+    );
   }
 
   Column logo() {
